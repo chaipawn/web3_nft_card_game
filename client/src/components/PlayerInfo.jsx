@@ -11,7 +11,6 @@ const marginIndexing = (index) =>
   index !== healthPoints - 1 ? "mr-1" : "mr-0";
 
 function PlayerInfo({ player, playerIcon, mt }) {
-  console.log(player);
   return (
     <div className={`${styles.flexCenter} ${mt ? "mt-4" : "mb-4"}`}>
       <img

@@ -71,8 +71,6 @@ function Battle() {
           health: p2H,
           mana: p2M,
         });
-
-        console.log(player1, player2);
       } catch (error) {
         console.log(error);
       }
