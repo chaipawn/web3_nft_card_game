@@ -25,7 +25,7 @@ function JoinBattle() {
     setBattleName(battleName);
 
     try {
-      await contract.joinBattle(battleName);
+      await contract.joinBattle(battleName, { gasLimit: 200000 });
 
       setShowAlert({
         status: true,
