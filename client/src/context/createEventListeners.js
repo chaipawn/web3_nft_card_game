@@ -47,7 +47,7 @@ export const createEventListeners = ({
   });
 
   const NewGameTokenEventFilter = contract.filters.NewGameToken();
-  ddNewEvent(NewGameTokenEventFilter, provider, ({ args }) => {
+  AddNewEvent(NewGameTokenEventFilter, provider, ({ args }) => {
     console.log("New game token created!", args);
 
     if (walletAddress.toLowerCase() === args.owner.toLowerCase()) {
