@@ -46,6 +46,21 @@ export const createEventListeners = ({
     }
   });
 
+  const NewGameTokenEventFilter = contract.filters.NewGameToken();
+  ddNewEvent(NewGameTokenEventFilter, provider, ({ args }) => {
+    console.log("New game token created!", args);
+
+    if (walletAddress.toLowerCase() === args.owner.toLowerCase()) {
+      setShowAlert({
+        status: true,
+        type: "success",
+        message: "Player game token has been successfully created",
+      });
+
+      navigate("/create-battle");
+    }
+  });
+
   const NewBattleEventFilter = contract.filters.NewBattle();
   AddNewEvent(NewBattleEventFilter, provider, ({ args }) => {
     console.log("New battle started!", args, walletAddress);
